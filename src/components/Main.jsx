@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Main = () => {
+const Main = (props) => {
   const [clubs, setClubs] = useState([])
   
   const fetchClubs = async () => {
@@ -29,12 +29,12 @@ const Main = () => {
     fetchClubs()
   }, [])
 
-  console.log('clubs : ', clubs)
-
+  //console.log('clubs : ', clubs)
+  console.log('main props: ', props)
   return (
     <View style={styles.container}>
       <Text>Canchera</Text>
-      <ClubList clubs={clubs} />
+      <ClubList clubs={clubs} navigation={props.navigation}/>
       
     </View>
   );

@@ -1,18 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { NativeRouter } from 'react-router-native';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Detail from './src/components/Detail';
 import Main from './src/components/Main';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <>
-    <NativeRouter>
-      <Main />
+    
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+            name='main'
+            component={Main} />
+        <Stack.Screen
+            name='Detail'
+            component={Detail} />
 
-    </NativeRouter>
-    <StatusBar style='auto' />
+      
+      </Stack.Navigator>
+      
 
-    </>
+      <StatusBar style='auto' />
+    </NavigationContainer>
+
   )
   
 };

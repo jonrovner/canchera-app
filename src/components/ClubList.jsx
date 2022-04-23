@@ -1,16 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import ClubCard from './clubCard';
 
-const ClubList = ({clubs}) => {
+const ClubList = ({clubs, navigation}) => {
     
     return (
         <>
-        {clubs && clubs.map(club => (
-        <View key={club.id}>
-            <Text>
-             {club.name} 
-            </Text>
-            </View>))}
+        {clubs && clubs.map(club => <ClubCard 
+            navigation={navigation}
+            key={club.name} 
+            name={club.name}
+            image={club.image}
+            description={club.description}
+            score={club.score}
+            address={`${club.street} ${club.num} ${club.ciudad}`}/>)}
         </>
 
     );
