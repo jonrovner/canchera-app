@@ -30,7 +30,7 @@ const Main = (props) => {
   }, [])
 
   //console.log('clubs : ', clubs)
-  console.log('main props: ', props)
+  //console.log('main props: ', props)
   return (
     <View style={styles.container}>
       <Text>Canchera</Text>
